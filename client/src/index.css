@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +6,7 @@
 /* COLORS --- 
 Yellow : bg-amber-300
 Blue : bg-cyan-500
+Purple: bg-purple-400
 
 */
 
@@ -26,7 +28,31 @@ body {
 #root {
 /*     border: 1px solid rgb(6 182 212);
     padding: 5em; */
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 6em;
+}
+
+h1 , .setOrbitronFont {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 400;
+}
+
+button:hover {
+    border:1px solid black;
+    background-color: white;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.showQuestion:hover {
+    cursor: pointer;
+}
+
+.showQuestion {
+    position: absolute;
+    right: 0;
+    bottom: -30;
 }
