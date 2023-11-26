@@ -47,12 +47,10 @@ button:hover {
     font-family: 'Courier New', Courier, monospace;
 }
 
-.showQuestion:hover {
+.iconhover:hover {
     cursor: pointer;
 }
 
-.showQuestion {
-    position: absolute;
-    right: 0;
-    bottom: -30;
+.supersizeme {
+    height: 39px;
 }
