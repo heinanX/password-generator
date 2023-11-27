@@ -2,20 +2,27 @@ import { iIcons } from "../interfaces/interfaces";
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
-import React, { useState } from "react";
+import { generatePassword } from "../functions/generator";
+import { useState } from "react";
 
-const Icons = ({ setActivePassword, setGeneratedPassword }: iIcons) => {
+const Icons = ({ setActivePassword, setGeneratedPassword, passwordType }: iIcons) => {
   const [activeMsg, setActiveMsg] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
-  const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  const revealMessage = (message: string, e: React.MouseEvent) => {
+  const revealMessage = (message: string) => {
     setMessage(message);
     setTimeout(() => {
-      setPosition({ x: e.clientX, y: e.clientY });
       setActiveMsg(true);
-    }, 1000);
+    }, 300);
   };
+
+  const handlePassword = (type: string) => {
+    const passes = generatePassword(type);
+
+    setGeneratedPassword(passes);
+  };
+
+  const iconStyling = 'dark:bg-purple-400 dark:text-black dark:hover:text-white hover:text-white dark:rounded-full dark:p-6';
 
   return (
     <span
@@ -27,36 +34,36 @@ const Icons = ({ setActivePassword, setGeneratedPassword }: iIcons) => {
           setActivePassword(false)
           setGeneratedPassword('')
         }}
-        onMouseEnter={(e) => revealMessage("return", e)}
-        onMouseLeave={() => {
-          setActiveMsg(false);
-        }}
-        className=" text-gray-400 "
+        onMouseEnter={() => revealMessage("return")}
+        onMouseLeave={() => setActiveMsg(false)}
+        className={iconStyling + 'hover:cursor-pointer bg-cyan-500 rounded-full'}
+        sx={{ fontSize: 40, padding:'5px' }}
       />
 
       <SaveAltIcon
         onClick={() => console.log("saved")}
-        onMouseEnter={(e) => revealMessage("save", e)}
-        onMouseLeave={() => {
-          setActiveMsg(false);
-        }}
-        className=""
+        onMouseEnter={() => revealMessage("save")}
+        onMouseLeave={() => setActiveMsg(false)}
+        className={iconStyling + "hover:cursor-pointer bg-cyan-500 rounded-full dark:hover:text-gray-300"}
+        sx={{ fontSize: 40, padding:'5px' }}
       />
       <RefreshIcon
-        onClick={() => setGeneratedPassword("refresh")}
-        onMouseEnter={(e) => revealMessage("refresh", e)}
-        onMouseLeave={() => {
-          setActiveMsg(false);
-        }}
-        className="text-cyan-500 supersizeme"
+        onClick={() => handlePassword(passwordType)}
+        onMouseEnter={() => revealMessage("refresh")}
+        onMouseLeave={() => setActiveMsg(false)}
+        className={iconStyling + "hover:cursor-pointer bg-cyan-500 rounded-full"}
+        sx={{ fontSize: 40, padding:'5px'}}
       />
       {activeMsg ? (
-        <p
-          className="activeMsg bg-white border border-black rounded-sm px-1 text-sm"
-          style={{ position: "fixed", top: position.y, left: position.x + 20 }}
+        
+        <div className="w-16" style={{ position: "fixed", bottom: 20, left:'48%' }}>
+          <p
+          className="activeMsg dark:text-cyan-500 border-black rounded-sm text-sm text-center"
+          
         >
           {message}
         </p>
+          </div>
       ) : (
         <></>
       )}

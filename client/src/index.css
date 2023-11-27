@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,46 +11,50 @@ Purple: bg-purple-400
 */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    width: 100%;
-    min-width: 350px;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  min-width: 350px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#root {
-/*     border: 1px solid rgb(6 182 212);
+#root,
+.PasswordDisplay--div {
+  /*     border: 1px solid rgb(6 182 212);
     padding: 5em; */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 6em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h1 , .setOrbitronFont {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 400;
+.PasswordDisplay--div {
+  justify-content: space-between;
 }
 
-button:hover {
-    border:1px solid black;
-    background-color: white;
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
+h1,
+.setOrbitronFont {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 400;
 }
 
-.iconhover:hover {
-    cursor: pointer;
+.btn-styling {
+  color: white;
+  padding: 0.5rem 0;
+  border-radius: 0.125rem
 }
 
-.supersizeme {
-    height: 39px;
+.btn-styling:hover {
+  border: 1px solid black;
+  color: black;
+  background-color: transparent;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 400;
 }

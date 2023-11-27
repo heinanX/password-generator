@@ -1,27 +1,37 @@
-import { iFrontPage} from "../interfaces/interfaces";
+import { iFrontPage } from "../interfaces/interfaces";
+import { generatePassword } from "../functions/generator";
 
-const Generate_btn = ({ setActivePassword, setGeneratedPassword }: iFrontPage) => {
-/*   const generatePW = (pass: string) => {
-    console.log(pass);
-  }; */
+const Generate_btn = ({
+  setActivePassword,
+  setGeneratedPassword,
+  setPasswordType,
+}: iFrontPage) => {
+  
+  const handlePassword = (type: string) => {
+    const passes = generatePassword(type);
+
+    setGeneratedPassword(passes);
+  };
 
   return (
-    <div className="flex flex-col gap-2 w-full h-36">
+    <div className="flex flex-col gap-2 w-full h-28 px-4">
       <button
         onClick={() => {
           setActivePassword(true);
-          setGeneratedPassword("basic");
+          setPasswordType("basic");
+          handlePassword("basic");
         }}
-        className="bg-cyan-500 text-white px-5 py-2 rounded-sm"
+        className={"btn-styling uppercase bg-cyan-500 dark:hover:border-white dark:hover:text-white"}
       >
         Generate basic password
       </button>
       <button
         onClick={() => {
           setActivePassword(true);
-          setGeneratedPassword("complex");
+          setPasswordType("complex");
+          handlePassword("complex");
         }}
-        className="bg-fuchsia-600 text-white px-5 py-2 rounded-sm"
+        className={"btn-styling uppercase bg-fuchsia-600 dark:hover:border-white dark:hover:text-white"}
       >
         Generate complex password
       </button>

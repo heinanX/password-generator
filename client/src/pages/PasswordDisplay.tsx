@@ -7,13 +7,18 @@ const PasswordDisplay = ({
   setActivePassword,
   generatedPassword,
   setGeneratedPassword,
+  passwordType,
 }: iPasswordDisplay) => {
   return (
-    <>
+    <div className="PasswordDisplay--div">
       <Logo />
       <Generated_PW generatedPassword={generatedPassword} />
-      <Icons setActivePassword={setActivePassword} setGeneratedPassword={setGeneratedPassword} />
-    </>
+      <Icons
+        setActivePassword={setActivePassword}
+        setGeneratedPassword={setGeneratedPassword}
+        passwordType={passwordType}
+      />
+    </div>
   );
 };
 
