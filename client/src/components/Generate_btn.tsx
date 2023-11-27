@@ -1,5 +1,5 @@
 import { iFrontPage } from "../interfaces/interfaces";
-import { generatePassword } from "../functions/generator";
+import { generatePassword } from "../functions/generatePassword";
 
 const Generate_btn = ({
   setActivePassword,

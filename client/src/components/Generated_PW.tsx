@@ -8,7 +8,7 @@ const Generated_PW: React.FC<GeneratedPWProps> = ({ generatedPassword }) => {
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(generatedPassword);
-      setCopySuccess(true)
+      setCopySuccess(true);
       setTimeout(() => setCopySuccess(false), 3000);
     } catch (error) {
       setCopyFailed(true);
@@ -25,16 +25,22 @@ const Generated_PW: React.FC<GeneratedPWProps> = ({ generatedPassword }) => {
       >
         {generatedPassword}
       </p>
-      {copySuccess ? <p className="absolute bottom-14 right-25 text-cyan-500">copied!</p> : <></>}
-      {copyFailed ? (
-        <p className="absolute bottom-14 right-25 text-red">copy Failed!</p>
-      ) : (
-        <></>
-      )}
       <ContentCopyIcon
         className=" absolute top-1 right-2"
         style={{ fontSize: "small" }}
       />
+
+      {/* CONDITIONS FOR CONFIRMATION MESSAGE OF COPY FAIL OR SUCCESS*/}
+      {copySuccess ? (
+        <p className="absolute bottom-14 right-25 text-cyan-500">copied!</p>
+      ) : (
+        <></>
+      )}
+      {copyFailed ? (
+        <p className="absolute bottom-14 right-25 text-red">copy failed!</p>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

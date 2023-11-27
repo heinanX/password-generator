@@ -10,9 +10,6 @@ export default {
       spacing: {
         '6px': '6px',
         '7px': '7px',
-      },
-      top: {
-        '-1rem': '-1rem'
       }
     },
   },

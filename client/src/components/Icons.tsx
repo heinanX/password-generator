@@ -2,7 +2,7 @@ import { iIcons } from "../interfaces/interfaces";
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
-import { generatePassword } from "../functions/generator";
+import { generatePassword } from "../functions/generatePassword";
 import { useState } from "react";
 
 const Icons = ({ setActivePassword, setGeneratedPassword, passwordType }: iIcons) => {
