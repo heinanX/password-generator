@@ -18,7 +18,7 @@ const InterfaceTheme = () => {
     
   return (
     <button
-    className={'hover:cursor-pointer hover:text-cyan-500 dark:text-white dark:hover:text-cyan-500 fixed top-4 right-4 hover:bg-black dark:hover:bg-white rounded-full py-6px px-7px'}
+    className={'hover:cursor-pointer hover:text-cyan-500 dark:text-white dark:hover:text-cyan-500 hover:bg-black dark:hover:bg-white rounded-full py-6px px-7px'}
     onClick={() => setActiveTheme((prevMode) => {
       const newMode = !prevMode
       localStorage.setItem('theme', newMode ? 'dark' : 'light')

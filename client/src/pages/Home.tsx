@@ -1,4 +1,4 @@
-import Generate_btn from "../components/Generate_btn";
+import GenerateBtns from "../components/GenerateBtns";
 import Instructions from "../components/Instructions";
 import Logo from "../components/Logo";
 import Title from "../components/Title";
@@ -13,7 +13,7 @@ const FrontPage = ({ setActivePassword, setGeneratedPassword, setPasswordType }:
         <Logo />
         <Instructions />
         <br />
-        <Generate_btn
+        <GenerateBtns
           setActivePassword={setActivePassword}
           setGeneratedPassword={setGeneratedPassword}
           setPasswordType={setPasswordType}

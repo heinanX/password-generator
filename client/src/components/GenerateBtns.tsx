@@ -1,12 +1,11 @@
 import { iFrontPage } from "../interfaces/interfaces";
 import { generatePassword } from "../functions/generatePassword";
 
-const Generate_btn = ({
+const GenerateBtns = ({
   setActivePassword,
   setGeneratedPassword,
   setPasswordType,
 }: iFrontPage) => {
-  
   const handlePassword = (type: string) => {
     const passes = generatePassword(type);
 
@@ -21,7 +20,9 @@ const Generate_btn = ({
           setPasswordType("basic");
           handlePassword("basic");
         }}
-        className={"btn-styling uppercase bg-cyan-500 dark:hover:border-white dark:hover:text-white"}
+        className={
+          "btn-styling uppercase bg-cyan-500 dark:hover:border-white dark:hover:text-white"
+        }
       >
         Generate basic password
       </button>
@@ -31,7 +32,9 @@ const Generate_btn = ({
           setPasswordType("complex");
           handlePassword("complex");
         }}
-        className={"btn-styling uppercase bg-fuchsia-600 dark:hover:border-white dark:hover:text-white"}
+        className={
+          "btn-styling uppercase bg-fuchsia-600 dark:hover:border-white dark:hover:text-white"
+        }
       >
         Generate complex password
       </button>
@@ -39,4 +42,4 @@ const Generate_btn = ({
   );
 };
 
-export default Generate_btn;
+export default GenerateBtns;
