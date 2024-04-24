@@ -11,12 +11,18 @@ export interface iPasswordDisplay {
   passwordType: string;
 }
 
-export interface iIcons {
+export interface iActionIcons {
   setActivePassword: (value: boolean) => void;
+  generatedPassword: string;
   setGeneratedPassword: (value: string) => void;
   passwordType: string;
 }
 
 export interface GeneratedPWProps {
+  generatedPassword: string;
+}
+
+export interface iSaveFeatureProps {
+  setHideSaveFeature: React.Dispatch<React.SetStateAction<boolean>>;
   generatedPassword: string;
 }

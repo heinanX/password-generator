@@ -6,6 +6,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      orbitron: ['Orbitron', 'sans-serif'], // Replace 'CustomFont' with the name of your font
+    },
     extend: {
       spacing: {
         '6px': '6px',
