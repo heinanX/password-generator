@@ -2,8 +2,6 @@ import { useState } from "react";
 import FrontPage from "./pages/Home";
 import PasswordDisplay from "./pages/PasswordDisplay";
 import InterfaceTheme from "./components/InterfaceTheme";
-import AccountIcon from "./components/AccountIcon";
-
 
 function App() {
   // ---- DIFFERENT STATES THAT ARE PASSED DOWN TO CHILDREN
@@ -14,8 +12,7 @@ function App() {
  
   return (
     <>
-    <div className="fixed top-4 right-4 flex">
-    <AccountIcon />
+    <div className="fixed flex top-4 right-4">
     <InterfaceTheme />
     </div>
 

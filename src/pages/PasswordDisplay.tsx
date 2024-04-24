@@ -1,5 +1,5 @@
 import Generated_PW from "../components/Generated_PW";
-import Icons from "../components/Icons";
+import ActionIcons from "../components/ActionIcons";
 import Logo from "../components/Logo";
 import { iPasswordDisplay } from "../interfaces/interfaces";
 
@@ -13,8 +13,9 @@ const PasswordDisplay = ({
     <div className="PasswordDisplay--div">
       <Logo />
       <Generated_PW generatedPassword={generatedPassword} />
-      <Icons
+      <ActionIcons
         setActivePassword={setActivePassword}
+        generatedPassword={generatedPassword}
         setGeneratedPassword={setGeneratedPassword}
         passwordType={passwordType}
       />
